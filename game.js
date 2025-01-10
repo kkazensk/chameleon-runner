@@ -1,6 +1,31 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
+// Add event listeners for screen buttons
+document.getElementById('leftButton').addEventListener('click', () => {
+    if (currentLane > 0 && !gameOver) {
+        currentLane--;
+    }
+});
+
+document.getElementById('rightButton').addEventListener('click', () => {
+    if (currentLane < 2 && !gameOver) {
+        currentLane++;
+    }
+});
+
+// Handle keyboard input
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft' || e.key === 'a' && currentLane > 0 && !gameOver) {
+        currentLane--;
+    } else if (e.key === 'ArrowRight' || e.key === 'd' && currentLane < 2 && !gameOver) {
+        currentLane++;
+    } else if (e.key === ' ' && gameOver) { // Spacebar to restart game
+        restartGame();
+    }
+});
+
+
 // Game settings
 const laneWidth = canvas.width / 3;
 const playerHeight = 40;

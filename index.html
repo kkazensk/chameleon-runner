@@ -12,14 +12,32 @@
             height: 100vh;
             margin: 0;
             background-color: #000;
+            flex-direction: column;
+            text-align: center;
         }
         canvas {
             border: 2px solid white;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: white;
+            border: 1px solid #ccc;
+            color: black;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
     <canvas id="gameCanvas" width="300" height="600"></canvas>
+    <div class="controls">
+        <button class="button" id="leftBtn">Left</button>
+        <button class="button" id="rightBtn">Right</button>
+    </div>
     <script src="game.js"></script>
 </body>
 </html>

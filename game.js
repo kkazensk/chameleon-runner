@@ -7,7 +7,6 @@ const playerHeight = 40;
 const playerWidth = 30;
 const playerStartLane = 1; // Middle lane (0: left, 1: middle, 2: right)
 const objectSize = 30; // Size for both squares and circles
-const objectSpeed = 2;
 
 // Player state
 let currentLane = playerStartLane;
@@ -15,7 +14,7 @@ let playerColor = 'green'; // Initial player color
 let gameOver = false; // Game over flag
 let score = 0; // Initialize score
 let bestScore = localStorage.getItem('bestScore') ? parseInt(localStorage.getItem('bestScore')) : 0;
-
+let objectSpeed = 3.5;
 
 // Array to store falling objects (both squares and circles)
 let objects = [];
@@ -193,6 +192,7 @@ function updateObjects() {
                     score += 5; // Increase score by 5 for touching a square
                 }
                 obj.touched = true;
+                obj.color = "rgba(255, 0, 0, 0)";
             }
         }
 
@@ -317,7 +317,7 @@ function restartGame() {
 updateGame();
 
 // Create new objects at intervals
-setInterval(createObjects, 1000); // Create new objects every second
+setInterval(createObjects, 500); // Create new objects every second
 
 // Handle restart using the "R" key
 window.addEventListener('keydown', (e) => {

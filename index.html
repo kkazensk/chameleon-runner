@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3-Lane Game</title>
+    <title>Chameleon Runner</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #000;
             flex-direction: column;
             text-align: center;
+            color: white;
+            background-color: #000;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh; /* Ensure the page takes up at least the full height of the viewport */
+            overflow: auto; /* Allow scrolling when content overflows */
         }
         canvas {
             border: 2px solid white;
@@ -30,14 +33,68 @@
             cursor: pointer;
             font-size: 20px;
         }
+        .instructions {
+            font-size: 16px;
+            color: white;
+            margin-top: 10px;
+        }
+        .instructions p {
+            margin: 5px 0;
+        }
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .title span:nth-child(1) { color: green; }
+        .title span:nth-child(2) { color: yellow; }
+        .title span:nth-child(3) { color: red; }
+        .title span:nth-child(4) { color: blue; }
+        .title span:nth-child(5) { color: green; }
+        .title span:nth-child(6) { color: yellow; }
+        .title span:nth-child(7) { color: red; }
+        .title span:nth-child(8) { color: blue; }
+        .title span:nth-child(9) { color: green; }
+        .title span:nth-child(10) { color: yellow; }
+        .title span:nth-child(11) { color: red; }
+        .title span:nth-child(12) { color: blue; }
+        .title span:nth-child(13) { color: green; }
+        .title span:nth-child(14) { color: yellow; }
+        .title span:nth-child(15) { color: red; }
+        .title span:nth-child(16) { color: blue; }
     </style>
 </head>
 <body>
+    <div class="title">
+        <span>C</span>
+        <span>h</span>
+        <span>a</span>
+        <span>m</span>
+        <span>e</span>
+        <span>l</span>
+        <span>e</span>
+        <span>o</span>
+        <span>n</span>
+        <span> </span>
+        <span>R</span>
+        <span>u</span>
+        <span>n</span>
+        <span>n</span>
+        <span>e</span>
+        <span>r</span>
+    </div>
     <canvas id="gameCanvas" width="300" height="600"></canvas>
     <div class="controls">
-        <button class="button" id="leftBtn">Left</button>
-        <button class="button" id="rightBtn">Right</button>
+        <button class="button" id="leftButton">&lt;</button>
+        <button class="button" id="rightButton">&gt;</button>
     </div>
+    <div class="instructions">
+        <p><strong>How to Play:</strong></p>
+        <p>Only touch squares of the same color. Change color by touching circles.</p>
+        <p>Avoid pink diamond obstacles. Move left/right with arrow keys or 'A'/'D'.</p>
+        <p>Press Spacebar, 'R', or Restart to restart.</p>
+    </div>
+    
     <script src="game.js"></script>
 </body>
 </html>

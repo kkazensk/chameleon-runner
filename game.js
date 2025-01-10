@@ -1,31 +1,6 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-// Add event listeners for screen buttons
-document.getElementById('leftButton').addEventListener('click', () => {
-    if (currentLane > 0 && !gameOver) {
-        currentLane--;
-    }
-});
-
-document.getElementById('rightButton').addEventListener('click', () => {
-    if (currentLane < 2 && !gameOver) {
-        currentLane++;
-    }
-});
-
-// Handle keyboard input
-window.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft' || e.key === 'a' && currentLane > 0 && !gameOver) {
-        currentLane--;
-    } else if (e.key === 'ArrowRight' || e.key === 'd' && currentLane < 2 && !gameOver) {
-        currentLane++;
-    } else if (e.key === ' ' && gameOver) { // Spacebar to restart game
-        restartGame();
-    }
-});
-
-
 // Game settings
 const laneWidth = canvas.width / 3;
 const playerHeight = 40;
@@ -271,9 +246,22 @@ function drawScore() {
 
 // Handle keyboard input
 window.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft' && currentLane > 0 && !gameOver) {
+    if ((e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') && currentLane > 0 && !gameOver) {
         currentLane--;
-    } else if (e.key === 'ArrowRight' && currentLane < 2 && !gameOver) {
+    } else if ((e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') && currentLane < 2 && !gameOver) {
+        currentLane++;
+    }
+});
+
+// Add event listeners for screen buttons
+document.getElementById('leftButton').addEventListener('click', () => {
+    if (currentLane > 0 && !gameOver) {
+        currentLane--;
+    }
+});
+
+document.getElementById('rightButton').addEventListener('click', () => {
+    if (currentLane < 2 && !gameOver) {
         currentLane++;
     }
 });
@@ -301,6 +289,7 @@ function showGameOver() {
 function showRestartButton() {
     const restartButton = document.createElement('button');
     restartButton.textContent = 'Restart Game';
+    restartButton.id = 'restartButton'; // Add an ID to the button
     restartButton.style.position = 'absolute';
     restartButton.style.top = '50%';
     restartButton.style.left = '50%';
@@ -319,9 +308,9 @@ function restartGame() {
     turn = 0;
     firstRound = true;
     currentLane = playerStartLane;
+    document.getElementById('restartButton').remove(); // Remove the restart button using its ID
     clearCanvas();
     updateGame();
-    document.querySelector('button').remove(); // Remove the restart button
 }
 
 // Start the game loop
@@ -332,9 +321,10 @@ setInterval(createObjects, 1000); // Create new objects every second
 
 // Handle restart using the "R" key
 window.addEventListener('keydown', (e) => {
-    if (e.key === 'r' || e.key === 'R') {
+    if (e.key === 'r' || e.key === 'R' || e.key === ' ') {
         if (gameOver) {
             restartGame();
         }
     }
+
 });

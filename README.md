@@ -2,21 +2,21 @@
 
 # Chameleon Runner
 
-**Chameleon Runner** is a fun and challenging retro-style web game built for the **AWS Game Builder Challenge Hackathon** by Amazon on Devpost, with the final submission due by **January 15, 2025**. The game features a chameleon that must change colors to camouflage and avoid obstacles while collecting points.
+**Chameleon Runner** is a fun and challenging retro-style web game built for the **AWS Game Builder Challenge Hackathon** by Amazon on Devpost. The game features a chameleon that must change colors to camouflage and avoid obstacles while collecting points.
 
 ## How to Play
 
-- **Objective**: Help the chameleon blend in by changing colors to match the squares, avoiding pink diamond obstacles, and earning points. Master the camouflage and save the chameleon!
+- **Objective**: Help the chameleon blend in by changing colors to match the squares, earning points in the process, while avoiding the pink diamond obstacles. Master the camouflage and save the chameleon!
 - **Controls**:
-  - Use the **arrow keys** or **A/D** keys to move the chameleon left and right between the 3 lanes.
-  - On mobile devices, use the on-screen buttons to control movement.
+  - Use the **left/right arrow keys** or the **A/D** keys to move the chameleon left and right between the 3 lanes.
+  - On mobile devices, use the on-screen arrow buttons to control movement.
   - After 8 rows of falling squares, a row of **circles** will appear. Touch a circle to change your chameleon’s color.
   - Match the color of your chameleon to the falling squares.
-  - If you touch a square that doesn't match your color, the game is over.
+  - If you touch a square that doesn’t match your color or collide with an obstacle, the game is over.
   - You can restart by pressing **Spacebar**, **R**, or by clicking the "Restart Game" button.
 
 - **Scoring**:
-  - Earn points for every square and circle you touch.
+  - Earn **5 points** for every matching square touched and **200 points** for every circle touched.
   - Your **best score** of the session will be tracked between games.
 
 ## Accessing the Game

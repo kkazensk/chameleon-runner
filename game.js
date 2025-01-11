@@ -192,7 +192,7 @@ function updateObjects() {
                     score += 5; // Increase score by 5 for touching a square
                 }
                 obj.touched = true;
-                obj.color = "rgba(255, 0, 0, 0)";
+                obj.color = "rgba(255, 0, 0, 0)"; // "eat" block when touch
             }
         }
 

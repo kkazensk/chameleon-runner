@@ -8,7 +8,7 @@
 
 - **Objective**: Help the chameleon blend in by changing colors to match the squares, earning points in the process, while avoiding the pink diamond obstacles. Master the camouflage and save the chameleon!
 - **Controls**:
-  - Use the **left/right arrow keys** or the **A/D** keys to move the chameleon left and right between the 3 lanes.
+  - Use the **left/right arrow keys** or the **A/D keys** to move the chameleon left and right between the 3 lanes.
   - On mobile devices, use the on-screen arrow buttons to control movement.
   - After 8 rows of falling squares, a row of **circles** will appear. Touch a circle to change your chameleon’s color.
   - Match the color of your chameleon to the falling squares.

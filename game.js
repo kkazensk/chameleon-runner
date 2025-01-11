@@ -240,7 +240,7 @@ function drawScore() {
     ctx.fillText('Score: ' + score, 10, 30); // Display current score
 
     // Display Best Score
-    ctx.fillText('Best Score: ' + bestScore, canvas.width - 150, 30); // Display best score at the top-right corner
+    ctx.fillText('Best Score: ' + bestScore, canvas.width - 160, 30); // Display best score at the top-right corner
 }
 
 
